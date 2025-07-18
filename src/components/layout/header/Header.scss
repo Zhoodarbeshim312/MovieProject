@@ -1,0 +1,178 @@
+#header {
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  padding: 20px 0;
+  background: #032541;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img {
+      width: 180px;
+    }
+    &--nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      a {
+        color: white;
+        font-weight: 500;
+        font-size: 18px;
+        position: relative;
+        width: max-content;
+        padding-bottom: 5px;
+        &::before {
+          content: "";
+          position: absolute;
+          background: white;
+          border-radius: 10px;
+          height: 2px;
+          bottom: 0;
+          width: 0%;
+          left: 0;
+          transition: 0.3s;
+        }
+        &.active::before {
+          width: 100%;
+        }
+        &:hover::before {
+          width: 100%;
+        }
+      }
+      &__form {
+        position: relative;
+        input {
+          width: 300px;
+          padding: 10px 40px 10px 10px;
+          font-size: 18px;
+          border-radius: 50px;
+        }
+        button {
+          border-radius: 50%;
+          padding: 5px;
+          background: #032541;
+          color: white;
+          top: 3px;
+          right: 3px;
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 25px;
+        }
+      }
+    }
+    &--btns {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      &__menu {
+        background: none;
+        color: white;
+        display: flex;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+      }
+      &__close {
+        background: none;
+        color: white;
+        display: flex;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+      }
+    }
+  }
+  .menu {
+    z-index: 999;
+    border-bottom-left-radius:30px ;
+    transition: 0.3s;
+    position: fixed;
+    right: 0;
+    padding: 20px;
+    width: 270px;
+    background: #032541;
+    // background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 69.5px;
+    &--nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      a {
+        color: white;
+        font-weight: 500;
+        font-size: 18px;
+        position: relative;
+        width: max-content;
+        padding-bottom: 5px;
+        &::before {
+          content: "";
+          position: absolute;
+          background: white;
+          border-radius: 10px;
+          height: 2px;
+          bottom: 0;
+          width: 0%;
+          left: 0;
+          transition: 0.3s;
+        }
+        &.active::before {
+          width: 100%;
+        }
+        &:hover::before {
+          width: 100%;
+        }
+      }
+      &__form {
+        position: relative;
+        input {
+          padding: 10px;
+          font-size: 18px;
+          border-radius: 50px;
+          width: 240px;
+        }
+        button {
+          top: 3px;
+          right: 3px;
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 5px;
+          font-size: 25px;
+          color: white;
+          border-radius: 50px;
+          background: #032541;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 900px) {
+  #header {
+    .header {
+      &--btns {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        &__menu {
+          display: flex;
+        }
+        &__close {
+          display: flex;
+        }
+      }
+      &--nav {
+        display: none;
+      }
+    }
+  }
+}

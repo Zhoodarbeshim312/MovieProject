@@ -1,0 +1,41 @@
+.card {
+  padding: 10px;
+  border-radius: 10px;
+  width: 250px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  justify-content: center;
+  flex-direction: column;
+  background: #032541;
+  color: white;
+  position: relative;
+  img {
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100%;
+  }
+  &--text {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span {
+      background: #032541;
+      border-radius: 50px;
+      border: 2px solid black;
+      width: 40px;
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      h1 {
+        font-size: 20px;
+      }
+      p {
+        color: silver;
+      }
+    }
+  }
+}
