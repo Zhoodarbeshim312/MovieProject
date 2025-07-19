@@ -16,7 +16,7 @@ const Card = ({ el }) => {
   return (
     <div
       style={{
-        background: theme === "white" ? "white" : "#121212",
+        background: theme === "dark" ? "#121212" : "white",
       }}
       className="card"
     >
