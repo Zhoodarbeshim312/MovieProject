@@ -3,22 +3,11 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
-  scrollbar-width: thin; 
-  scrollbar-color: #ccc transparent; 
-
-  &::-webkit-scrollbar {
-    width: 8px; 
-    height: 6px; 
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 4px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+html {
+  scrollbar-width: none;
 }
 a {
   text-decoration: none;
