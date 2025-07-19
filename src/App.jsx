@@ -4,6 +4,7 @@ import Main from "./components/pages/main/Main";
 import Popular from "./components/pages/popular/Popular";
 import TopRated from "./components/pages/topRated/TopRated";
 import MovieDetails from "./components/pages/movieDetails/MovieDetails";
+import ActorsDetails from "./components/pages/actorsDetails/ActorsDetails";
 
 function App() {
   const routers = [
@@ -26,6 +27,11 @@ function App() {
       id: 4,
       path: "/movieDetails/:movieId",
       element: <MovieDetails />,
+    },
+    {
+      id: 5,
+      path: "/movieDetails/actorDetails/:actorId",
+      element: <ActorsDetails />,
     },
   ];
   return (

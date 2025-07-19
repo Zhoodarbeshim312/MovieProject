@@ -5,6 +5,8 @@ const initialState = {
   movie: [],
   details: {},
   actor: [],
+  video: [],
+  actorDetails: {},
 };
 export const ProductSlice = createSlice({
   name: "PRODUCT",
@@ -27,9 +29,22 @@ export const ProductSlice = createSlice({
     getActor(state, action) {
       state.actor = action.payload;
     },
+    getVidoe(state, action) {
+      state.video = action.payload;
+    },
+    getActorDetails(state, action) {
+      state.actorDetails = action.payload;
+    },
   },
 });
 
-export const { whiteTheme, darkTheme, getMovie, getDetails, getActor } =
-  ProductSlice.actions;
+export const {
+  whiteTheme,
+  darkTheme,
+  getMovie,
+  getDetails,
+  getActor,
+  getVidoe,
+  getActorDetails,
+} = ProductSlice.actions;
 export default ProductSlice.reducer;

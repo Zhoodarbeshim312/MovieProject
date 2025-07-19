@@ -7,8 +7,9 @@
   gap: 10px;
   justify-content: center;
   flex-direction: column;
-  background: #032541;
-  color: white;
+  // background: white;
+  box-shadow: 0 0 10px 1px silver;
+  color: black;
   position: relative;
   img {
     cursor: pointer;
@@ -20,21 +21,39 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    span {
-      background: #032541;
-      border-radius: 50px;
-      border: 2px solid black;
-      width: 40px;
+    &__btns {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      span {
+        background: #032541;
+        border-radius: 50px;
+        border: 2px solid black;
+        width: 40px;
+        height: 40px;
+      }
+      button {
+        font-size: 20px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #032541;
+        border-radius: 50px;
+        border: 2px solid black;
+        width: 40px;
+        height: 40px;
+      }
     }
     &__info {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
       h1 {
         font-size: 20px;
       }
       p {
-        color: silver;
+        color: grey;
       }
     }
   }

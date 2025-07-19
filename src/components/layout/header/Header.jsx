@@ -3,15 +3,16 @@ import headLogo from "../../../assets/images/headLogo.svg";
 import { NavLink } from "react-router-dom";
 import { IoIosMenu, IoIosSearch } from "react-icons/io";
 import { IoCloseOutline } from "react-icons/io5";
-import { LuSun, LuSunMoon } from "react-icons/lu";
 import { useDispatch } from "react-redux";
 import { darkTheme, whiteTheme } from "../../../redux/productSlice";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useEffect } from "react";
 import { TbSunMoon } from "react-icons/tb";
+import { useRef } from "react";
 
 const Header = () => {
+  const menuRef = useRef();
   const { theme } = useSelector((s) => s.productApp);
   const [menu, setMenu] = useState(false);
   const dispatch = useDispatch();
@@ -24,8 +25,22 @@ const Header = () => {
   };
 
   useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (menu && menuRef.current && !menuRef.current.contains(e.target)) {
+        setMenu(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menu]);
+
+  useEffect(() => {
     document.body.className = theme; // применяет тему как класс
   }, [theme]);
+
   const btnStyle = {
     display: "flex",
     alignItems: "center",
@@ -44,6 +59,7 @@ const Header = () => {
             <NavLink to={"/"}>Main</NavLink>
             <NavLink to={"/popular"}>Popular</NavLink>
             <NavLink to={"/topRated"}>Top Rated</NavLink>
+            <NavLink to={"/favourite"}>Favourite</NavLink>
             <div className="header--nav__form">
               <input type="text" placeholder="Search Movie..." />
               <button>
@@ -77,6 +93,7 @@ const Header = () => {
           </div>
         </div>
         <div
+          ref={menuRef}
           style={{
             right: menu ? "0" : "-300px",
           }}

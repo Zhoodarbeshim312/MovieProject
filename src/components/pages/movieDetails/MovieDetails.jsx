@@ -12,6 +12,7 @@ import "react-circular-progressbar/dist/styles.css";
 import { MdFavorite } from "react-icons/md";
 import { IoBookmark } from "react-icons/io5";
 import Actors from "../../ui/actors/Actors";
+import Videos from "../../ui/videos/Videos";
 const MovieDetails = () => {
   const getColor = (percentage) => {
     if (percentage >= 70) return "#21d07a";
@@ -97,6 +98,7 @@ const MovieDetails = () => {
         </div>
       </section>
       <Actors kinoId={movieId} />
+      <Videos videoId={movieId} />
     </>
   );
 };

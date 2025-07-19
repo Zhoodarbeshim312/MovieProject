@@ -1,0 +1,24 @@
+#videos {
+  padding: 40px 0;
+  .videos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    &--card {
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 1px silver;
+      // width: 300px;
+      iframe {
+        border-radius: 10px;
+        width: 250px;
+      }
+      h1 {
+        width: 240px;
+        font-size: 18px;
+      }
+    }
+  }
+}
